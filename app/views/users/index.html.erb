@@ -1,1 +1,12 @@
-This is a dummy page.
+<h1>User List</h1>
+<div id="users">
+<% for user in @users %>
+  <div class="user">
+    <p>
+      <strong><%= user.username %></strong>
+      <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>
+      <div class="clear"></div>
+    </p>
+  </div>
+<% end %>
+</div>
